@@ -1,0 +1,113 @@
+/*
+Theme Name: TWA Theme
+Author: Tu Nombre
+Description: Un tema personalizado para el sitio de TWA Soluciones Profesionales.
+Version: 1.0
+*/
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+.hero-section {
+    background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1784&q=80') no-repeat center center/cover;
+}
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-color: #3b82f6; /* blue-500 */
+}
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.page-section {
+    display: none; /* All pages hidden by default */
+}
+.page-section.active {
+    display: block; /* Active page is shown */
+}
+/* Styles for Service Tabs */
+.tab-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+.tab-button.active {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    font-weight: 600;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+.service-image {
+    transition: transform 0.4s ease;
+}
+.group:hover .service-image {
+    transform: scale(1.05);
+}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    animation-play-state: paused;
+}
+.whatsapp-float span {
+    display: none;
+    position: absolute;
+    right: 70px; /* Position to the left of the button */
+    width: max-content;
+    background-color: #075E54;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.whatsapp-float:hover span {
+    display: block;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
